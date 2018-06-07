@@ -8,8 +8,19 @@ namespace CustomListClassTest
     public class CustomListTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Add_String_Value_To_Custom_List()
         {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            string inputValue = "hello";
+            int expectedCount = 1;
+            
+            //Act
+            customList.Add(inputValue);
+            int actualCount = customList.arrCount;
+
+            //Assert
+            Assert.AreEqual(expectedCount, actualCount);
         }
     }
 }
