@@ -8,22 +8,78 @@ namespace CustomListClass
 {
     public class CustomList<T>
     {
-        public int arrCount;
-        public int capacity;
-        T[] arr;
-        public CustomList()
+        private int counter;
+        private int capacity;
+        private T[] arr;
+         public CustomList()
         {
+            counter = 0;
             capacity = 5;
             arr = new T[capacity];
-            arrCount = 0;
-
         }
-
-        public void Add(T inputValue)
+        public int Counter
         {
-                 //add the th8ng
-                // handle the count
-                // check capacity
+            get
+            {
+                return counter;
+            }
+            set
+            {
+                counter = value;
+            }
+        }
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+            set
+            {
+                capacity = value;
+            }
+        }
+        public T[] Arr
+        {
+            get
+            {
+                return arr;
+            }
+            set
+            {
+                arr = value;
+            }
+        }
+        public T this[int index]
+        {
+            get
+            {
+                return arr[index];
+            }
+            set
+            {
+                arr[index] = value;
+            }
+        }
+        public void Add(T nextElement)
+        {
+        //[]fooArray = new fooArray[9];
+            if (counter == capacity)
+            {
+                GrowList();
+            }
+            arr[counter] = nextElement;
+            counter++;
+        }
+        public void GrowList()
+        {
+            T[] tempArr = new T[capacity * 2];
+            for (int i = 0; i < capacity; i++)
+            {
+                tempArr[i] = arr[i];
+            }
+            capacity *= 2;
+            arr = tempArr;
         }
     }
 }

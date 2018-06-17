@@ -10,6 +10,7 @@ namespace CustomListClass
     {
         static void Main(string[] args)
         {
+//            CustomList<string> stringArray = new CustomList<string>();
         }
     }
 }
