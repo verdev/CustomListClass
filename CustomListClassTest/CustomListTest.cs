@@ -32,7 +32,7 @@ namespace CustomListClassTest
 
             //Act
             customList.Add(inputValue);
-            string actualValue = customerList[0];
+            string actualValue = customList[0];
 
             //Assert
             Assert.AreEqual(expectedValue, actualValue);
