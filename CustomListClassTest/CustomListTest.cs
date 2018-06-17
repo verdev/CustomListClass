@@ -77,5 +77,45 @@ namespace CustomListClassTest
             //Assert
             Assert.AreEqual(expectedValue, actualValue);
         }
+        [TestMethod]
+        public void Check_Value_At_Index_4_Using_Object_Datatype()
+        {
+            //Arrange
+            CustomList<object> customList = new CustomList<object>();
+            string index0 = "index0";
+            bool index1 = true;
+            string index2 = "index2";
+            double index3 = 3.82543;
+            ulong index4 = 18446744073709551615;
+            string expectedValueIndex0 = "index0";
+            bool expectedValueIndex1 = true;
+            string expectedValueIndex2 = "index2";
+            double expectedValueIndex3 = 3.82543;
+            ulong expectedValueIndex4 = 18446744073709551615;
+            object actualValueIndex0;
+            object actualValueIndex1;
+            object actualValueIndex2;
+            object actualValueIndex3;
+            object actualValueIndex4;
+
+            //Act
+            customList.Add(index0);
+            customList.Add(index1);
+            customList.Add(index2);
+            customList.Add(index3);
+            customList.Add(index4);
+            actualValueIndex0 = customList[0];
+            actualValueIndex1 = customList[1];
+            actualValueIndex2 = customList[2];
+            actualValueIndex3 = customList[3];
+            actualValueIndex4 = customList[4];
+
+            //Assert
+            Assert.AreEqual(expectedValueIndex0, actualValueIndex0);
+            Assert.AreEqual(expectedValueIndex1, actualValueIndex1);
+            Assert.AreEqual(expectedValueIndex2, actualValueIndex2);
+            Assert.AreEqual(expectedValueIndex3, actualValueIndex3);
+            Assert.AreEqual(expectedValueIndex4, actualValueIndex4);
+        }
     }
 }
