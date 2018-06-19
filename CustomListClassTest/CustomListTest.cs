@@ -93,30 +93,33 @@ namespace CustomListClassTest
             //Assert
             Assert.AreEqual(expectedValueIndex4, actualValueIndex4);
         }
- /*       public void Check_Value_At_Index_12_After_Grow_Array_Method()
+        [TestMethod]
+        public void Remove_String_Value_From_Custom_List_Checks_Removed_Index_Value()
         {
             //Arrange
-            CustomList<ulong> customList = new CustomList<ulong>();
-
-            string index0 = "index0";
-            bool index1 = true;
-            string index2 = "index2";
-            double index3 = 3.82543;
-            ulong index4 = 18446744073709551615;
-            ulong expectedValueIndex4 = 18446744073709551615;
-            object actualValueIndex4;
+            CustomList<string> customList = new CustomList<string>() { "You're", "A", "Good", "Choice" };
+            string deleteValue = "You're";
+            string expectedValue = "A";
 
             //Act
-            customList.Add(index0);
-            customList.Add(index1);
-            customList.Add(index2);
-            customList.Add(index3);
-            customList.Add(index4);
-            actualValueIndex4 = customList[4];
+            customList.Remove(deleteValue);
+            string actualValue = customList[0];
 
             //Assert
-            Assert.AreEqual(expectedValueIndex4, actualValueIndex4);
+            Assert.AreEqual(expectedValue, actualValue);
         }
-        */
+        [TestMethod]
+        public void Test_Custom_To_String_Method()
+        {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>() { "You're", "A", "Good", "Choice", "To", "Choose" };
+            string expectedValue = "You're A Good Choice To Choose ";
+
+            //Act
+            string actualValue = customList.ToString();
+
+            //Assert
+            Assert.AreEqual(expectedValue, actualValue);
+        }
     }
 }
